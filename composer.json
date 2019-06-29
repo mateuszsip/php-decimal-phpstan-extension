@@ -11,7 +11,7 @@
     ],
     "require": {
         "ext-php-decimal": "*",
-        "phpstan/phpstan": "^0.11"
+        "phpstan/phpstan": "^0.11.7"
     },
     "autoload": {
         "psr-4": {

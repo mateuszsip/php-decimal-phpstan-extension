@@ -20,12 +20,11 @@ matrix:
 before_install:
   - sudo apt-get update
   - sudo apt-get install -y libmpdec-dev
-  - pecl install decimal
+  - pecl install decimal-1.3.0
 
 before_script:
-  - echo "extension = decimal.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
-  - if [ "$dependencies" = "lowest" ]; then composer update --prefer-lowest --no-interaction; fi
-  - if [ "$dependencies" = "highest" ]; then composer update --no-interaction; fi
+  - if [ "$dependencies" = "lowest" ]; then composer update --prefer-lowest --no-interaction --ignore-platform-reqs; fi
+  - if [ "$dependencies" = "highest" ]; then composer update --no-interaction --ignore-platform-reqs; fi
 
 cache:
   directories:
