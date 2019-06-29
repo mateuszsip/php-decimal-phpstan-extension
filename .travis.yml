@@ -18,6 +18,8 @@ matrix:
     - php: master
 
 install:
+  - pecl install decimal
+  - echo "extension=decimal.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - if [ "$dependencies" = "lowest" ]; then composer update --prefer-lowest --no-interaction; fi
   - if [ "$dependencies" = "highest" ]; then composer update --no-interaction; fi
 
