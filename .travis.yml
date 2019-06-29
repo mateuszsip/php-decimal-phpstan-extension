@@ -20,9 +20,9 @@ matrix:
 before_install:
   - sudo apt-get update
   - sudo apt-get install -y libmpdec-dev
-  - sudo pecl install decimal
 
-install:
+before_script:
+  - pecl install decimal
   - if [ "$dependencies" = "lowest" ]; then composer update --prefer-lowest --no-interaction; fi
   - if [ "$dependencies" = "highest" ]; then composer update --no-interaction; fi
 
