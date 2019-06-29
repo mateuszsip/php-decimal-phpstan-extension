@@ -1,0 +1,26 @@
+dist: xenial
+language: php
+
+stages:
+  - test
+
+php:
+  - 7.2
+  - 7.3
+  - master
+
+env:
+  matrix:
+    - dependencies=lowest
+    - dependencies=highest
+matrix:
+  allow_failures:
+    - php: master
+
+install:
+  - if [ "$dependencies" = "lowest" ]; then composer update --prefer-lowest --no-interaction; fi
+  - if [ "$dependencies" = "highest" ]; then composer update --no-interaction; fi
+
+cache:
+  directories:
+    - $HOME/.composer/cache
