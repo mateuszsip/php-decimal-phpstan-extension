@@ -1,0 +1,5 @@
+services:
+  -
+    class: kejwmenPhpDecimalPhpstanExtension\Extension
+    tags:
+      - phpstan.broker.operatorTypeSpecifyingExtension
