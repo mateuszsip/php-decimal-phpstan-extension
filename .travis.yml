@@ -21,7 +21,6 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install -y libmpdec-dev
   - pecl install decimal
-  - phpenv config-rm decimal.ini
 
 before_script:
   - echo "extension = decimal.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
